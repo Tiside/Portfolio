@@ -12,7 +12,7 @@
     --gray: #808080;
     --black: #000000;
     --aqua: #00FFFF;
-
+    --light-gray: #ccc;
 }
 
 
@@ -74,43 +74,50 @@ body{
     display: flex;
     justify-content: center;
     margin-top: 100px;
+    margin-bottom: 100px;
+    flex-wrap: wrap;
 }
+
 
 .second-about .row{
     column-gap: 40px;
     width: 80%;
+    flex-wrap: wrap;
 }
 
-.second-about .container .row .col:nth-child(1){
+.second-about .container .row .first-col{
     background: linear-gradient(50deg, white, gray);
     border-radius: 15px;
-    padding: 15px;
+    padding: 20px;
     margin: 0;
     border: 1px solid white;
     width: 20%;
     box-shadow: 2px 2px 10px 2px var(--gray);
 }
 
-.second-about .container .row .col:nth-of-type(1) h4{
+.second-about .container .row .first-col h4{
     color: #262626;
 }
 
-.second-about .container .row .col:nth-of-type(1) p{
+.second-about .container .row .first-col p{
     color: var(--gray);
     font-weight: 500;
 }
 
-.second-about .container .row .col:nth-of-type(1) i{
+.second-about .container .row .first-col i{
     color: var(--black);
     font-size: 25px;
     transition: transform 0.5s ease;
 }
 
-.second-about .container .row .col:nth-of-type(1) i:hover{
+.second-about .container .row .first-col i:hover{
     transform: scale(1.1);
     cursor: pointer;
 }
 
+.second-about .exp {
+    margin-top: 20px;
+}
 .second-about .row .col h2{
     color: var(--white);
 }
@@ -118,4 +125,329 @@ body{
     color: var(--white);
 }
 
+.second-about .exp .row .col h4{
+    font-size: 18px;
+    color: var(--white);
+}
+.second-about .exp .row .col p{
+   font-size: 30px;
+   color: var(--gray);
+}
+.second-about .exp button {
+    background: linear-gradient(45deg, white, gray);
+    border: 1px solid var(--white);
+    border-radius: 5px;
+    padding: 5px 10px;
+    width: 80%;
+    font-size: 18px;
+    font-weight: 500;
+    transition: box-shadow 0.5s ease, transform 0.5s ease;
+    position: relative;
+}
+.second-about .exp button i {
+    position: absolute;
+    top: -20%;
+    right: 50%;
+    opacity: 0;
+    transition: top 0.5s ease, opacity 0.5s ease;
+}
 
+.second-about .exp button:hover i {
+    top: 25%;
+    opacity: 1;
+}
+
+.second-about .exp button span {
+   transition: opacity 0.5s ease;
+}
+
+.second-about .exp button:hover span {
+   opacity: 0;
+}
+.second-about .exp button:hover {
+    box-shadow: 2px 2px 15px 2px var(--white);
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+
+.project{
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+.project h2{
+    margin-bottom: 100px;
+    color: white;
+}
+
+.project .container .row .col:nth-of-type(1) h3{
+    color: var(--white);
+    letter-spacing: 0.5px;
+    margin-bottom: 30px;
+}
+.project .container .row .col:nth-of-type(1) p{
+    color: var(--white);
+    text-align: left;
+}
+
+.project .container .row .col:nth-of-type(2) {
+    perspective: 1000px;
+}
+
+.project .container .row .col .monitor{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform: rotateY(20deg) rotateX(-10deg);
+    transform-origin: left center;
+}
+
+.project .container .row .col .monitor h4{
+    color: var(--white);
+}
+
+.project .container .row .col .screen{
+    width: 500px;
+    height: 300px;
+    background-color: var(--black);
+    border: 10px solid var(--light-gray);
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.9);
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.project .container .row .col .screen .slider{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    overflow: hidden;
+    position: relative;
+}
+
+.project .container .row .col .screen .slides {
+    display: flex;
+    width: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.project .container .row .col .screen .slides img{
+    width: 500px;
+    height: 300px;
+    object-fit: cover;
+    flex-shrink: 0.04;
+}
+
+.project .container .row .col .screen button{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: var(--white);
+    font-size: 18px;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.project .container .row .col .screen .prev{
+    left: 10px;
+}
+.project .container .row .col .screen .next{
+    right: 10px;
+}
+
+
+.project .container .row .col .stand{
+    width: 20px;
+    height: 80px;
+    background-color: var(--light-gray);
+    margin-top: -10px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.9);
+    z-index: 0;
+}
+
+.project .container .row .col .base{
+    width: 100px;
+    height: 20px;
+    background-color: var(--light-gray);
+    border-radius: 10px 10px 0 0;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.9);
+    margin-top: -10px;
+    z-index: 1;
+}
+
+.skills{
+    text-align: center;
+    margin-bottom: 100px;
+}
+.skills h2{
+    color: var(--white);
+    margin-bottom: 100px;
+}
+
+.skills .container .row .col-sm {
+    position: relative;
+}
+
+.skills .container .row:nth-of-type(1){
+    margin-bottom: 30px;
+}
+.skills .container .row h3{
+    color: var(--white);
+    font-weight: 600;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.skills .container .row p{
+    color: var(--light-gray);
+}
+
+.skills .container .row .col-sm .skill-level {
+    position: absolute;
+    top: 50px;
+    right: 0;
+    width: 150px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    border-radius: 50%;
+    border: 10px solid;
+}
+.skills .container .row .col-sm:nth-of-type(1) .skill-level {
+    background: #ff4f4f28;
+    border-color: #ff4f4f;
+    color: #ff4f4f;
+}
+.skills .container .row .col-sm:nth-of-type(2) .skill-level {
+    background: #4fa0ff28;
+    border-color: #4fa0ff;
+    color: #4fa0ff;
+}
+.skills .container .row .col-sm:nth-of-type(3) .skill-level {
+    background: #ffed4f28;
+    border-color: #ffed4f;
+    color: #ffed4f;
+}
+.skills .container .row:nth-of-type(2) .col-sm:nth-of-type(1) .skill-level {
+    background: #4fdfff28;
+    border-color: #4fdfff;
+    color: #4fdfff;
+}
+.skills .container .row:nth-of-type(2) .col-sm:nth-of-type(2) .skill-level {
+    background: #ff80ff28; 
+    border-color: #ff80ff;
+    color: #ff80ff;
+}
+.skills .container .row:nth-of-type(2) .col-sm:nth-of-type(3) .skill-level {
+    background: #80ff4f28; 
+    border-color: #80ff4f;
+    color: #80ff4f;
+}
+
+.expirience{
+    display: block;
+    width: 80%;
+    margin: 150px auto;
+}
+.expirience h1{
+    margin-bottom: 150px;
+    color: var(--white);
+}
+
+.card{
+    width: 45%;
+    padding: 30px;
+    border-radius: 10px;
+    color: var(--white);
+    margin: -80px 0;
+    position: relative;
+    background: red;
+}
+
+.card:nth-child(even){
+    margin-left: auto;
+}
+
+.card:nth-child(even)::before{
+    content: '';
+    position: absolute;
+    left: -13.5%;
+    top: 50%;
+    transform: translateY(-50%);
+    border: 5px solid var(--gray);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+
+.card:nth-child(even):after{
+    content: '';
+    position: absolute;
+    left: -8.5%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 7%;
+    height: 2px;
+    background: var(--white);
+    z-index: -1;
+}
+
+.card:nth-child(odd)::before{
+    content: '';
+    position: absolute;
+    right: -12.5%;
+    top: 50%;
+    transform: translateY(-50%);
+    border: 5px solid var(--gray);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+
+.card:nth-child(odd)::after{
+    content: '';
+    position: absolute;
+    right: -8.5%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 7%;
+    height: 2px;
+    background: var(--white);
+    z-index: -1;
+}
+
+.card:nth-child(2), .card:nth-child(2)::before{
+    background: red;
+}
+.card:nth-child(3), .card:nth-child(3)::before{
+    background-color: #ffb84f;
+}
+.card:nth-child(4), .card:nth-child(4)::before{
+    background: #3dca5c;
+}
+.card:nth-child(5), .card:nth-child(5)::before{
+    background: #565252;
+}
+
+.card:nth-child(even) .card-body::before{
+    content: '';
+    position: absolute;
+    left: -12%;
+    top: 0;
+    width: 0px;
+    height: 100%;
+    border: 1px dashed var(--light-gray);
+    z-index: -1;
+}
+
+.card h3{
+    font-size: 30px;
+    font-weight: 300;
+    margin-bottom: 20px;
+}
